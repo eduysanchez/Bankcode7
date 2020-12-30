@@ -1,0 +1,32 @@
+<main class="form-signin">
+    <form autocomplete="off" [formGroup]="loginForm" (ngSubmit)="login()">
+        <img class="mb-4 logo" src="./assets/img/template/logo-bankcode7.png" alt="Logo BankCode7">
+
+        <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
+
+        <div class="form-group">
+            <label for="email" class="visually-hidden">E-mail</label>
+            <input type="email" id="email" class="form-control" placeholder="E-mail" formControlName="email" [class.is-invalid]="emailNotValid">
+            <small class="form-text text-danger" *ngIf="emailNotValid">
+                Use um formato válido para o e-mail.<br>
+                Exemplo: eduysanchez@gmail.com
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="visually-hidden">Senha</label>
+            <input type="password" id="password" class="form-control" placeholder="Senha" formControlName="password">
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" formControlName="remember"> Lembrar-me
+            </label>
+        </div>
+
+        <button class="w-100 btn btn-lg log-in mb-2" type="submit" [disabled]="!loginForm.valid">Log in</button>
+    </form>
+    <hr>
+    <button type="button" class="w-100 btn btn-link mb-2" [routerLink]="['/register']">Não tem uma conta? Cadastre-se</button>
+    <p class="mt-5 mb-3 text-muted text-center">Copyright &copy; 2020 bankcode7. Todos os direitos reservados.</p>
+</main>

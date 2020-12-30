@@ -1,0 +1,55 @@
+<main class="form-signin">
+    <form autocomplete="off" [formGroup]="registerForm" (ngSubmit)="register()">
+        <img class="mb-4 logo" src="./assets/img/template/logo-bankcode7.png" alt="Logo BankCode7">
+
+        <h1 class="h3 mb-3 fw-normal text-center">Cadastre-se</h1>
+
+        <div class="form-group">
+            <label for="name" class="visually-hidden">Nome</label>
+            <input type="text" id="name" class="form-control" placeholder="Nome" formControlName="firstName" [class.is-invalid]="firstNameNotValid" autofocus>
+            <small class="form-text text-danger text-left" *ngIf="firstNameNotValid">
+                O nome tem que ter pelo menos 2 letras
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName" class="visually-hidden">Sobrenome</label>
+            <input type="text" id="lastName" class="form-control" placeholder="Sobrenome" formControlName="lastName" [class.is-invalid]="lastNameNotValid">
+            <small class="form-text text-danger text-left" *ngIf="lastNameNotValid">
+                O Sobrenome tem que ter pelo menos 2 letras
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="visually-hidden">E-mail</label>
+            <input type="email" id="email" class="form-control" placeholder="E-mail" formControlName="email" [class.is-invalid]="emailNotValid">
+            <small class="form-text text-danger" *ngIf="emailNotValid">
+                Use um formato válido para o e-mail.<br>
+                Exemplo: eduysanchez@gmail.com
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="visually-hidden">Senha</label>
+            <input type="password" id="password" class="form-control" placeholder="Senha" formControlName="password" [class.is-invalid]="passwordNotValid">
+            <small class="form-text text-danger" *ngIf="passwordNotValid">
+                A senha deve ter pelo menos 8 caracteres:<br>
+                (Letras minúsculas, letras maiúsculas, números e caracteres especiais)
+            </small>
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember" formControlName="remember"> Lembrar-me
+            </label>
+        </div>
+
+        <button class="w-100 mt-3 btn btn-lg criar-conta" type="submit" [disabled]="!registerForm.valid">Criar conta</button>        
+    </form>
+    <hr>
+    <div class="container">
+        <button type="button" class="w-100 btn btn-link mb-2" [routerLink]="['/login']">Tem uma conta? Conecte-se</button>
+    </div>
+
+    <p class="mt-5 mb-3 text-muted text-center">Copyright &copy; 2020 bankcode7. Todos os direitos reservados.</p>
+</main>
