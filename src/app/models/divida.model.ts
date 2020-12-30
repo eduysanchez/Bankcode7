@@ -1,5 +1,5 @@
 export class DividaModel {
-    id?: string;
+    id: any;
     id_user!: string;
     motivo!: string;
     data!: Date;

@@ -18,4 +18,4 @@ Tem que trocar a url do banco de dados Realtime Database Firebase en dividas.ser
 private url = 'https://bankcode7-59dc2-default-rtdb.firebaseio.com';
 private url = 'Trocar por seu url';
 
-Também pode testar com meu site no hosting de firebased:
+Também pode testar com meu site no hosting de firebased: https://bankcode7-59dc2.web.app
